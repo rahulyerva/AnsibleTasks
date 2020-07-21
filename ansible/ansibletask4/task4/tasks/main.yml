@@ -1,0 +1,7 @@
+---
+# tasks file for task4
+- include_tasks: centospackage.yml 
+  when: ansible_os_family == "RedHat"
+
+- include_tasks: ubuntupackage.yml
+  when: ansible_os_family == "Debian" 

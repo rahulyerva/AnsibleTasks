@@ -1,0 +1,4 @@
+- name: Insert index page
+  template:
+    src: index.php
+    dest: /var/www/html/index.php

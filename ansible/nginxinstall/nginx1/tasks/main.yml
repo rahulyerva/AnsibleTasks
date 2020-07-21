@@ -1,0 +1,6 @@
+---
+# tasks file for nginx1
+
+- import_tasks: epelrelease.yml
+- import_tasks: nginxinstall.yml
+- import_tasks: indexpage.yml

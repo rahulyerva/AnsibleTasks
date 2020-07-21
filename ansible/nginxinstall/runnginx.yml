@@ -1,0 +1,5 @@
+- name: This role is to install nginx
+  hosts: slave
+  roles:
+  - nginx1
+  

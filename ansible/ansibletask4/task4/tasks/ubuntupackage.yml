@@ -1,0 +1,21 @@
+
+- name: Installing java on Ubuntu
+  apt:
+    name: openjdk-8-jdk
+    state: present
+
+- name: Installing maven on Ubuntu
+  apt: 
+    name: maven
+    state: present
+
+- name: Installing apache web server on Ubuntu
+  apt:
+    name: apache2
+    state: present
+
+- name: installing tomcat on Ubuntu
+  apt: 
+    name: tomcat7
+    state: present
+

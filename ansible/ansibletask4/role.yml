@@ -1,0 +1,5 @@
+- name: This role is to install packeages in ubuntu and centos
+  hosts: slaves
+  roles:
+  - task4
+

@@ -1,0 +1,8 @@
+---
+# tasks file for nginx1
+
+- import_tasks: epelrelease.yml
+- import_tasks: nginxinstall.yml
+- import_tasks: httpd.yml
+- import_tasks: phpinstall.yml
+- import_tasks: phpinfo.yml 

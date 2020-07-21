@@ -1,0 +1,4 @@
+- name: Insert index page
+  template:
+    src: index.html
+    dest: /usr/share/nginx/html/index.html

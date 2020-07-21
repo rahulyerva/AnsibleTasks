@@ -1,0 +1,20 @@
+- name: updating yum package manager
+  yum:
+    name: '*'
+    state: latest
+- name: Installing java on Centos
+  yum:
+    name: java
+    state: present
+- name: Installing Maven on centos
+  yum:
+    name: maven
+    state: present
+- name: Installing webserver on Centos
+  yum:
+    name: httpd
+    state: present
+- name: Installing tomcat on Centos
+  yum:
+    name: tomcat
+    state: present
