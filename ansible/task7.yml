@@ -1,0 +1,57 @@
+---
+- name: This playbook is for Jenkins environment setup
+  hosts: slave
+  become: true
+  tasks:
+    - name: updating yum repository
+      yum:
+        name: "*"
+        state: latest
+    - name: Installing Java
+      yum:
+        name: java
+        state: latest
+    - name: Installing Maven
+      yum:
+        name: maven
+        state: latest
+    - name: Installing Git
+      yum:
+        name: git
+        state: latest
+    - name: Installing Python
+      yum:
+        name: python
+        state: latest
+    - name: Installing docker
+      yum:
+        name: docker
+        state: latest
+    - name: Installing epel-release
+      yum:
+        name: epel-release
+        state: latest
+    - name: Installing ansible
+      yum: 
+        name: ansible
+        state: latest
+    - name: Installing jenkins
+      get_url:
+        url: http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+        dest: /etc/yum.repos.d/jenkins.repo
+    - name: Import Jenkins Key
+      rpm_key:
+        state: present
+        key: https://jenkins-ci.org/redhat/jenkins-ci.org.key
+    - name: Install Jenkins
+      yum:
+        name: jenkins
+        state: present
+    - name: Start & Enable Jenkin
+      systemd:
+        name: jenkins
+        state: started
+        enabled: true
+    - name: change jenkins user permissions
+      shell: usermod -s /bin/bash jenkins
+      
