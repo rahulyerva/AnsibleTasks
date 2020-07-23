@@ -1,0 +1,11 @@
+- name: chack ports  
+  wait_for:
+    host: slave
+    port: "{{ item }}"
+    state: started        
+    delay: 0              
+    timeout: 3      
+  ignore_errors: yes
+  with_items:
+    - 80
+  register: port

@@ -1,0 +1,7 @@
+- name: Installing Java
+  yum:
+    name: java
+    state: present
+
+
+

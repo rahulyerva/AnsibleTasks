@@ -1,0 +1,6 @@
+---
+# tasks file for task4
+
+- import_tasks: javainstall.yml
+- import_tasks: httpd.yml
+- import_tasks: tomcat.yml 

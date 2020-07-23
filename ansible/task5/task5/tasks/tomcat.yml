@@ -1,0 +1,16 @@
+- name: Install tomcat
+  yum: 
+    name: tomcat
+    state: present
+- name: start
+  service:
+    name: tomcat
+    state: started
+- name: Change port number
+  command: sed -i 's/8080/8085/g' /usr/share/tomcat/conf/server.xml 
+
+- name: Restart tomcat
+  service:
+    name: tomcat
+    state: restarted
+

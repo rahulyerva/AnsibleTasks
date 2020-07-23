@@ -1,0 +1,31 @@
+- name: Install httpd
+  yum:
+    name: httpd
+    state: latest
+
+- name: Start httpd
+  service:
+    name: httpd
+    state: started
+
+- name: Check port 80 is listening or not
+  wait_for:
+    port: 80
+    delay: 5
+    timeout: 10
+    msg: "Timeout waiting for 80 to respond"
+  register: port_check
+  ignore_errors: yes
+- debug: 
+    var: port_check
+ 
+- name: Try restarting httpd if not started
+  service:
+    name: httpd
+    state: restart
+    enabled: yes
+  when: 
+    port_check.failed != false
+
+
+
