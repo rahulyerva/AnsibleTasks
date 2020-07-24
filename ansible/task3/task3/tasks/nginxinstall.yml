@@ -1,0 +1,8 @@
+- name: Installing nginx
+  yum:
+    name: nginx
+    state: present
+- name: enable nginx
+  command: systemctl enable nginx
+- name: start nginx
+  command: systemctl start nginx

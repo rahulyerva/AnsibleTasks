@@ -1,0 +1,6 @@
+- name: Deploy index.php
+  copy: 
+    src: /AnsibleTasks/ansible/task3/task3/files/index.php
+    dest: /usr/share/nginx/html/index.php
+
+

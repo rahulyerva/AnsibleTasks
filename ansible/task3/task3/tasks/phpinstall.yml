@@ -1,0 +1,19 @@
+- name: installing PHP
+  yum:
+    name: php-fpm
+    state: present
+- name: installing PHP-cli
+  yum:
+    name: php-cli
+    state: present
+- name: PHP Processor
+  copy:
+    src: /AnsibleTasks/ansible/task3/task3/files/php.ini
+    dest: /etc/php.ini
+- name: edit www.conf file
+  copy: 
+    src: /AnsibleTasks/ansible/task3/task3/files/www.conf
+    dest: /etc/php-fpm.d/www.conf  
+
+- name: Restart php
+  command: systemctl restart php-fpm

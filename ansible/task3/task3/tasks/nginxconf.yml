@@ -1,0 +1,6 @@
+- name: Nginx Configuration
+  copy:
+    src: /AnsibleTasks/ansible/task3/task3/files/default.conf
+    dest: /etc/nginx/conf.d/default.conf
+- name: restart nginx
+  command: systemctl restart nginx

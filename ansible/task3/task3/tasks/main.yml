@@ -1,0 +1,8 @@
+---
+# tasks file for task3
+- import_tasks: mariadbinstall.yml
+- import_tasks: epel-release.yml
+- import_tasks: nginxinstall.yml
+- import_tasks: phpinstall.yml
+- import_tasks: nginxconf.yml
+- import_tasks: deploy.yml

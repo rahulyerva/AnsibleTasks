@@ -1,0 +1,15 @@
+- name: Installing mariadb
+  yum:
+    name: mariadb
+    state: present
+
+- name: Installing mariadb-server
+  yum:
+    name: mariadb-server
+    state: present
+
+- name: enable mariadb
+  command: systemctl start mariadb
+
+- name: start mariadb
+  command: systemctl start mariadb
