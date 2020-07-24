@@ -1,5 +1,0 @@
-- name: This role is to install nginx and php
-  hosts: slave
-  roles:
-  - nginx1
-  
